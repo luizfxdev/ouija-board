@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tabuleiro Ouija ASCII - Decifrador Místico</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Lato:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Vídeo de Background -->
+    <video id="background-video" autoplay loop muted playsinline>
+      <source src="assets/background.mp4" type="video/mp4" />
+    </video>
+
+    <!-- Controles de Áudio -->
+    <div class="audio-controls">
+      <button id="play-audio" class="audio-btn" title="Tocar música">🎵</button>
+      <button id="pause-audio" class="audio-btn" title="Pausar música">⏸️</button>
+    </div>
+
+    <audio id="theme-audio" loop>
+      <source src="assets/theme.mp3" type="audio/mpeg" />
+    </audio>
+
+    <!-- Conteúdo Principal -->
+    <div class="main-content">
+      <!-- Container Principal -->
+      <div class="container">
+        <h2>Decifrador ASCII Místico</h2>
+
+        <!-- Campo de Entrada -->
+        <div class="input-section">
+          <label for="ascii-input">Digite os códigos ASCII separados por espaço:</label>
+          <input type="text" id="ascii-input" placeholder="Ex: 72 79 76 65" autocomplete="off" />
+        </div>
+
+        <!-- Botões de Ação -->
+        <div class="button-group">
+          <button class="custom-btn btn-1" id="decipher-btn">DECIFRAR</button>
+          <button class="custom-btn btn-1" id="return-btn">RETORNAR</button>
+        </div>
+
+        <!-- Seção de Resultado -->
+        <div class="result-section">
+          <h3>Resultado</h3>
+          <div id="calculation-details" class="calculation-area"></div>
+          <div id="final-output" class="final-output"></div>
+        </div>
+      </div>
+
+      <!-- Tabuleiro Ouija -->
+      <div class="ouija-board">
+        <div class="board-title">OUIJA</div>
+
+        <!-- Linha Superior: SI e NO -->
+        <div class="special-row top-special">
+          <div class="board-item special" data-char="SI">SI</div>
+          <div class="board-item special" data-char="NO">NO</div>
+        </div>
+
+        <!-- Alfabeto em arco -->
+        <div class="alphabet-arc">
+          <div class="board-item letter" data-char="A">A</div>
+          <div class="board-item letter" data-char="B">B</div>
+          <div class="board-item letter" data-char="C">C</div>
+          <div class="board-item letter" data-char="D">D</div>
+          <div class="board-item letter" data-char="E">E</div>
+          <div class="board-item letter" data-char="F">F</div>
+          <div class="board-item letter" data-char="G">G</div>
+          <div class="board-item letter" data-char="H">H</div>
+          <div class="board-item letter" data-char="I">I</div>
+          <div class="board-item letter" data-char="J">J</div>
+          <div class="board-item letter" data-char="K">K</div>
+          <div class="board-item letter" data-char="L">L</div>
+          <div class="board-item letter" data-char="M">M</div>
+        </div>
+
+        <div class="alphabet-arc second-arc">
+          <div class="board-item letter" data-char="N">N</div>
+          <div class="board-item letter" data-char="O">O</div>
+          <div class="board-item letter" data-char="P">P</div>
+          <div class="board-item letter" data-char="Q">Q</div>
+          <div class="board-item letter" data-char="R">R</div>
+          <div class="board-item letter" data-char="S">S</div>
+          <div class="board-item letter" data-char="T">T</div>
+          <div class="board-item letter" data-char="U">U</div>
+          <div class="board-item letter" data-char="V">V</div>
+          <div class="board-item letter" data-char="W">W</div>
+          <div class="board-item letter" data-char="X">X</div>
+          <div class="board-item letter" data-char="Y">Y</div>
+          <div class="board-item letter" data-char="Z">Z</div>
+        </div>
+
+        <!-- Números -->
+        <div class="numbers-row">
+          <div class="board-item number" data-char="1">1</div>
+          <div class="board-item number" data-char="2">2</div>
+          <div class="board-item number" data-char="3">3</div>
+          <div class="board-item number" data-char="4">4</div>
+          <div class="board-item number" data-char="5">5</div>
+          <div class="board-item number" data-char="6">6</div>
+          <div class="board-item number" data-char="7">7</div>
+          <div class="board-item number" data-char="8">8</div>
+          <div class="board-item number" data-char="9">9</div>
+          <div class="board-item number" data-char="0">0</div>
+        </div>
+
+        <!-- Símbolos especiais -->
+        <div class="symbols-row">
+          <div class="board-item symbol" data-char="¿?">¿?</div>
+          <div class="board-item symbol" data-char="+">+</div>
+          <div class="board-item symbol" data-char="-">-</div>
+          <div class="board-item symbol" data-char=" ">ESPAÇO</div>
+        </div>
+
+        <!-- Adeus -->
+        <div class="goodbye-section">
+          <div class="board-item special goodbye" data-char="GOODBYE">GOODBYE</div>
+        </div>
+
+        <!-- Planchette -->
+        <div class="planchette" id="planchette">
+          <div class="planchette-hole"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
